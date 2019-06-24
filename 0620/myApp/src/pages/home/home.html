@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  The world is your oyster.
+  <p>
+    NFC : {{tag}}
+  </p>
+
+  <p>
+    geolocation : {{lat}}, {{lng}}
+  </p>
+  
+  <p>
+    DeviceID : {{uuid}}
+  </p>
+
+  <p>
+    <button ion-button color="dark" clear (click)="myVir()">震動</button>
+    <button ion-button color="light" clear (click)="lightOn()">On</button>
+    <button ion-button color="light" clear (click)="lightOff()">Off</button>
+  </p>
+
+</ion-content>

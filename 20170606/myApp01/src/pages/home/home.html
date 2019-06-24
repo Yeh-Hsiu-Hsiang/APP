@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- .................................. -->  
+  <div padding>
+    <ion-segment>
+      <ion-segment-button (click)="loadData('台北')">
+        台北
+      </ion-segment-button>
+      <ion-segment-button (click)="loadData('台南')">
+        台南
+      </ion-segment-button>
+      <ion-segment-button (click)="loadData('彰化')">
+        彰化
+      </ion-segment-button>
+      <ion-segment-button (click)="loadData('宜蘭')">
+        宜蘭
+      </ion-segment-button>   
+      <ion-segment-button (click)="loadData('高雄')">
+        高雄
+      </ion-segment-button>                   
+    </ion-segment>
+  </div>
+  <!-- .................................. -->
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail item-left>
+        <img src="{{item.thumbnail}}">
+      </ion-thumbnail>
+      <h2>{{item.name}}</h2>
+      <p>{{item.author}}</p>		
+      <button ion-button clear item-end (click)="goNext(item.name, item.author, item.imgURL, item.comment, item.authorImgURL, item.lat, item.lng)">View</button>
+    </ion-item>
+  </ion-list>
+  <!-- .................................. -->	
+
+</ion-content>

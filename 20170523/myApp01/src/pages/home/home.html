@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      My Ionic
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+   <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!-- --------------- -->
+  <ion-list>
+  <ion-item *ngFor = "let item of items">
+    <ion-thumbnail item-left>
+      <img src="{{item.thumbnail}}">
+    </ion-thumbnail>
+    <h2>{{item.name}}</h2>
+    <p>{{item.author}}</p>
+    <button ion-button clear item-right (click) = "goNext(item.name, item.authorImgURL, item.imgURL, item.comment, item.lastUpdate)">View</button>
+  </ion-item>
+</ion-list>
+   <!-- --------------- -->
+</ion-content>
